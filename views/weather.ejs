@@ -1,0 +1,48 @@
+<%- include("header") -%>
+<section class="vh-100" style="background-color: darkcyan;">
+  <div class="container">
+    <h1 class="text-center my-4">Weather Data</h1>
+
+    <!-- Location input and button -->
+    <form action="/weather" method="post" >
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" name="location" id="city" placeholder="Enter city name" aria-label="City name">
+        <button class="btn btn-primary" type="submit" id="getWeather">Get Weather</button>
+    </div>
+  </form>
+    <% if ( temperature !== "") { %>
+    <!-- Weather information -->
+    <div class="card mb-3" id="weather-info" style="background-color: #008C5D;">
+        <div class="card-body">
+            <h5 class="card-title" id="cityName">City <%= country %></h5>
+            <p class="card-text" id="description">Description:<%= des %> </p>
+            <p class="card-text" id="temperature">Temperature: <%= temperature %>°C</p>
+            <p class="card-text" id="humidity">Humidity: <%= humidityData %></p>
+            <p class="card-text" id="windSpeed">Wind Speed:  <%= speedData %></p>
+            <div class="d-flex flex-row align-items-center">
+              <img src="<%= image %>" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- Map -->
+    <div id="map"></div>
+
+    <!-- Graph -->
+    <canvas id="weatherChart" class="my-4"></canvas>
+</div>
+
+<% }%>
+           
+         
+   
+            
+        
+  
+          
+  
+        </div>
+      </div>
+  
+    </div>
+  </section>
